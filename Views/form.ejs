@@ -1,0 +1,384 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume Generator</title>
+  <link rel="stylesheet" href="/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+  /* Vibrant, Responsive CSS for Resume Generator Form */
+
+:root {
+  --primary-color: #ff5722;       /* Vibrant Orange */
+  --secondary-color: #009688;     /* Teal */
+  --background-color: #fff3e0;    /* Light Cream */
+  --input-border: #009688;
+  --input-focus: #ff7043;
+  --button-bg: #ff5722;
+  --button-hover-bg: #e64a19;
+  --text-color: #212121;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.header img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-info h1 {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.header-info p {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+
+body {
+  background-color: var(--background-color);
+  font-family: var(--font-family);
+  color: var(--text-color);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+.container {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(255, 87, 34, 0.3);
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 600px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 30px 0 15px 0;
+  font-weight: 600;
+  border-bottom: 3px solid var(--secondary-color);
+  padding-bottom: 6px;
+  color: var(--secondary-color);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="date"],
+select,
+textarea {
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 2px solid var(--input-border);
+  border-radius: 10px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: var(--font-family);
+  color: var(--text-color);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--input-focus);
+  outline: none;
+  box-shadow: 0 0 8px var(--input-focus);
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+  font-family: var(--font-family);
+}
+
+select {
+  cursor: pointer;
+  background-color: white;
+}
+
+button.btn {
+  margin-top: 30px;
+  background-color: var(--button-bg);
+  color: white;
+  font-weight: 700;
+  padding: 16px 0;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  letter-spacing: 0.06em;
+  transition: background-color 0.3s ease;
+}
+
+button.btn:hover,
+button.btn:focus {
+  background-color: var(--button-hover-bg);
+  outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .container {
+    padding: 30px 20px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.3rem;
+    margin: 25px 0 12px 0;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="date"],
+  select,
+  textarea {
+    font-size: 0.95rem;
+  }
+  
+  button.btn {
+    font-size: 1.1rem;
+    padding: 14px 0;
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    padding: 20px 12px;
+  }
+  
+  .container {
+    padding: 25px 15px;
+  }
+  
+  h1 {
+    font-size: 1.7rem;
+  }
+  
+  h2 {
+    font-size: 1.1rem;
+  }
+  
+  button.btn {
+    padding: 12px 0;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    padding: 16px;
+    font-size: 16px;
+  }
+
+  .form-container {
+    max-width: 100%;
+    padding: 12px;
+  }
+
+  .form-group {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+}
+
+</style>
+<body class="form-page">
+  <div class="container">
+    <h1>Create Your Resume</h1>
+    <form action="/generate" method="POST" enctype="multipart/form-data">
+<div class="form-group">
+  <label for="profile">Profile Photo</label>
+  <input type="file" id="profile" name="profile" accept="image/*">
+</div>
+
+    <form action="/generate" method="POST">
+      <!-- ========== Personal Info ========== -->
+      <h2>Personal Details</h2>
+      <div class="form-group"><label for="name">Full Name*</label><input id="name" name="name" required></div>
+      <div class="form-group">
+        <label for="title">Job Title*</label>
+        <select id="title" name="title" required>
+          <option value="">-- Select --</option>
+          <option>Student</option>
+          <option>Software Engineer</option>
+          <option>Web Developer</option>
+          <option>Data Analyst</option>
+          <option>Frontend Developer</option>
+          <option>Backend Developer</option>
+          <option>Full Stack Developer</option>
+          <option>Project Manager</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group"><label for="summary">Professional Summary</label><textarea id="summary" name="summary"></textarea></div>
+      <h2>Contact Information</h2>
+      <div class="form-group"><label for="email">Email</label><input id="email" name="email" type="email"></div>
+      <div class="form-group"><label for="phone">Phone</label><input id="phone" name="phone" type="tel"></div>
+      <div class="form-group"><label for="address">Address</label><input id="address" name="address"></div>
+      <div class="form-group"><label for="website">Portfolio Website</label><input id="website" name="website" type="url"></div>
+      <div class="form-group"><label for="linkedin">LinkedIn Profile</label><input id="linkedin" name="linkedin" type="url"></div>
+     
+      <h2>Education</h2>
+      <div class="form-group"><label for="education1_level">Level-1</label>
+        <select id="education1_level" name="education1_level">
+          <option>B.Tech</option><option>M.Tech</option><option>Intermediate</option><option>SSC</option><option>Diploma</option>
+        </select></div>
+      <div class="form-group"><label for="education1_major">Course / Major</label><input id="education1_major" name="education1_major"></div>
+      <div class="form-group"><label for="education1_institute">Institute Name</label><input id="education1_institute" name="education1_institute"></div>
+      <div class="form-group"><label for="education1_duration">Duration</label><input id="education1_duration" name="education1_duration"></div>
+      <div class="form-group"><label for="education1_grade">Grade / CGPA</label><input id="education1_grade" name="education1_grade"></div>
+      <div class="form-group"><label for="education2_level">Level-2</label>
+        <select id="education2_level" name="education2_level">
+          <option value="">-- Select --</option><option>Intermediate</option><option>Diploma</option><option>SSC</option>
+        </select></div>
+      <div class="form-group"><label for="education2_major">Course</label><input id="education2_major" name="education2_major"></div>
+      <div class="form-group"><label for="education2_institute">Institute Name</label><input id="education2_institute" name="education2_institute"></div>
+      <div class="form-group"><label for="education2_duration">Duration</label><input id="education2_duration" name="education2_duration"></div>
+      <div class="form-group"><label for="education2_grade">Grade / CGPA</label><input id="education2_grade" name="education2_grade"></div>
+      
+<!-- SSC Education -->
+<div class="form-group">
+  <label for="education3_level">Education Type</label>
+  <input type="text" name="education3_level" id="education3_level">
+
+  <label for="education3_institute">Name of School</label>
+  <input type="text" name="education3_institute" id="education3_institute">
+
+  <label for="education3_duration">Duration</label>
+  <input type="text" name="education3_duration" id="education3_duration">
+
+  <label for="education3_grade">Grade</label>
+  <input type="text" name="education3_grade" id="education3_grade">
+</div>
+
+      <h2>Certifications</h2>
+      <div class="form-group"><label for="certifications">List Certifications</label><textarea id="certifications" name="certifications"></textarea></div>
+      <h2>Skills</h2>
+      <div class="form-group"><label for="skills">Technical / Soft Skills</label><textarea id="skills" name="skills"></textarea></div>
+      <h2>Personal Details</h2>
+      <div class="form-group"><label for="dob">Date of Birth</label><input id="dob" name="dob"></div>
+      <div class="form-group">
+  <label for="age">Age</label>
+  <input type="number" id="age" name="age" min="0" max="100" placeholder="Enter your age">
+</div>
+
+       <!-- Internship Experience -->
+<div class="form-group">
+  <label for="internship">Internship Experience</label>
+  <textarea name="internship" id="internship" rows="4"></textarea>
+</div>
+
+
+<!-- Hobbies -->
+<div class="form-group">
+  <label>Hobbies (select all that apply)</label><br>
+  <input type="checkbox" name="hobbies" value="Reading"> Reading<br>
+  <input type="checkbox" name="hobbies" value="Coding"> Coding<br>
+  <input type="checkbox" name="hobbies" value="Photography"> Photography<br>
+  <input type="checkbox" name="hobbies" value="Traveling"> Traveling<br>
+  <input type="checkbox" name="hobbies" value="Gaming"> Gaming<br>
+</div>
+
+<!-- Languages -->
+<div class="form-group">
+  <label>Languages Known</label><br>
+  <input type="checkbox" name="languages" value="English"> English<br>
+  <input type="checkbox" name="languages" value="Hindi"> Hindi<br>
+  <input type="checkbox" name="languages" value="Telugu"> Telugu<br>
+  <input type="checkbox" name="languages" value="Tamil"> Tamil<br>
+  <input type="checkbox" name="languages" value="Other"> Other<br>
+</div>
+
+<!-- Key Achievements -->
+<div class="form-group">
+  <label for="achievements">Key Achievements</label>
+  <textarea name="achievements" id="achievements" rows="4" placeholder="e.g. Secured 1st place in Hackathon, Published an IEEE paper..."></textarea>
+</div>
+
+      <button type="submit" class="btn">Generate PDF Resume</button>
+    </form>
+  </div>
+</body>
+</html>
